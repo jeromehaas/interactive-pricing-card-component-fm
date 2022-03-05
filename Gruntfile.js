@@ -81,6 +81,19 @@ module.exports = function(grunt) {
         }
   	  }
 		},
+
+		copy: {
+			main: {
+				files: [
+					{ 
+						expand: true, 
+						cwd: 'src/assets',
+    				src: '**',
+						dest: 'assets/'
+					},
+				]
+			}
+		},
 		
 		watch: {
 			less: {
@@ -89,7 +102,6 @@ module.exports = function(grunt) {
 			},
 			html: {
 				files: 'index.html',
-				tasks: ['htmlTask'],
 			},
 			options: {
 				livereload: {
@@ -118,30 +130,28 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	grunt.registerTask('watchTask', function() {
 		grunt.task.run(['connect', 'watch']);
 	});
 
 	grunt.registerTask('lessTask', function() {
-		grunt.log.writeln('----------------------------------');
-		grunt.log.writeln('LESS');
+		const done = this.async();
 		grunt.task.run(['less']);
+		done();
 	});
 	
-	grunt.registerTask('htmlTask', function() {
-		grunt.log.writeln('----------------------------------');
-		grunt.log.writeln('HTML');
+	grunt.registerTask('assetsTask', function() {
+		const done = this.async()
+		grunt.task.run(['copy:main']);
+		done();
 	});
 	
 	grunt.registerTask('default', function() {
-		grunt.log.writeln('----------------------------------');
-		grunt.log.writeln('LESS');
+		grunt.task.run(['assetsTask']);
 		grunt.task.run(['lessTask']);
-		grunt.log.writeln('----------------------------------');
-		grunt.log.writeln('WATCH');
 		grunt.task.run(['watchTask']);
-		
 	});
 
 };
