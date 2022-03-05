@@ -9,13 +9,18 @@
   "author": "Jérôme Haas",
   "license": "ISC",
   "dependencies": {
+    "browser-sync": "^2.27.7",
     "grunt": "^1.4.1",
+    "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-concat": "^2.0.0",
+    "grunt-contrib-connect": "^3.0.0",
     "grunt-contrib-jshint": "^3.2.0",
     "grunt-contrib-less": "^3.0.0",
     "grunt-contrib-nodeunit": "^4.0.0",
     "grunt-contrib-uglify": "^5.0.1",
     "grunt-contrib-watch": "^1.1.0",
-    "less": "^4.1.2"
+    "less": "^4.1.2",
+    "less-plugin-autoprefix": "^2.0.0",
+    "less-plugin-clean-css": "^1.5.1"
   }
 }
