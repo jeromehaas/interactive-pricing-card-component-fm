@@ -13,13 +13,6 @@ class Pricing {
 			pageviews: '100K Pageviews',
 			total: '$16.00'
 		}
-		// this.packages = {
-		// 	['10K']: { monthly: 8, yearly: 72 },
-		// 	['50K']: { monthly: 12, yearly: 108 },
-		// 	['100K']: { monthly: 16, yearly: 144 },
-		// 	['500K']: { monthly: 24, yearly: 216 },
-		// 	['1M']: { monthly: 36, yearly: 324 }
-		// }
 		this.packages = [
 			{ pageviews: '10K Pageviews', monthly: '$8.00', yearly: '$72.00' },
 			{ pageviews: '50K Pageviews', monthly: '$12.00', yearly: '$108.00' },
@@ -58,7 +51,7 @@ class Pricing {
 	}
 
 	updateSliderStyle () {
-		const value = (this.elements.slider.value-this.elements.slider.min)/(this.elements.slider.max-this.elements.slider.min)*100  	// this.style.background = 'linear-gradient(to right, #82CFD0 0%, #82CFD0 ' + value + '%, #fff ' + value + '%, white 100%)'
+		const value = (this.elements.slider.value-this.elements.slider.min)/(this.elements.slider.max-this.elements.slider.min)*100;  
 		this.elements.slider.style.background = `linear-gradient(to right, #A4F3EB 0%, #A4F3EB ${value}%, #ECF0FB ${value}%, #ECF0FB 100%)`;
 	}
 
