@@ -10,7 +10,46 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-	hello you!
+	<section class="pricing">
+		<div class="pricing__teaser">
+			<h1 class="pricing__title">Simple, traffic-based pricing</h1>
+			<h3 class="pricing__subtitle">Sign-up for our 30-day trial. No credit card required.</h3>
+		</div>
+		<main class="pricing__card card">
+			<div class="card__top">
+				<div class="card__pageviews">
+					<p>100K Pageviews</p>
+				</div>
+				<div class="card__price">
+					<p><span>$16.00</span><span>/ month</span></p>
+				</div>
+				<div class="card__slider">
+					<input id="myinput" min="0" max="60" type="range" value="30" steps="10"/>
+				</div>
+				<div class="card__billing">
+					<p>Monthly Billing</p>
+					<div class="switch">
+						<input class="switch__input" type="checkbox" name="toggle">
+						<label class="switch__label" for="toggle"><i class="switch__toggle"></i></label>
+					</div>
+					<p>Yearly Billing</p>
+				</div>
+			</div>
+			<div class="card__bottom">
+				<div class="card__advantages">
+					<ul>
+						<li>Unlimited websites </li>
+						<li>100% data ownership </li>
+						<li>Email reports</li>
+					</ul>
+				</div>
+				<div class="card__cta">
+					<button href="#">Start my trial</button>
+				</div>
+			</div>
+		</main>
+	</section>
 	<script src="http://localhost:35729/livereload.js"></script>
+	<script src="js/pricing.js"></script>
 </body>
 </html>

@@ -25,6 +25,12 @@ module.exports = function(grunt) {
     				src: '**',
 						dest: 'assets/'
 					},
+					{ 
+						expand: true, 
+						cwd: 'src/js',
+    				src: '**',
+						dest: 'js/'
+					},
 				]
 			}
 		},
@@ -36,6 +42,10 @@ module.exports = function(grunt) {
 			},
 			html: {
 				files: 'index.html',
+			},
+			js: {
+				files: 'src/js/**/*.js',
+				tasks: ['copyTask']
 			},
 			options: {
 				livereload: {
@@ -76,14 +86,14 @@ module.exports = function(grunt) {
 		done();
 	});
 	
-	grunt.registerTask('assetsTask', function() {
+	grunt.registerTask('copyTask', function() {
 		const done = this.async()
 		grunt.task.run(['copy:main']);
 		done();
 	});
 	
 	grunt.registerTask('default', function() {
-		grunt.task.run(['assetsTask']);
+		grunt.task.run(['copyTask']);
 		grunt.task.run(['lessTask']);
 		grunt.task.run(['watchTask']);
 	});
